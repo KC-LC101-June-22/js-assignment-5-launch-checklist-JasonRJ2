@@ -32,7 +32,7 @@ function changeLaunchStatus(document, ready) {
     let launchStatus = document.querySelector("h2[id=launchStatus");
     if(ready)
     {
-        launchStatus.textContent = "Shuttle is ready for launch";
+        launchStatus.textContent = "Shuttle is Ready for Launch";
         launchStatus.style.color = "rgb(65, 159, 106)";
     } else {
         launchStatus.textContent = "Shuttle Not Ready for Launch";
@@ -86,9 +86,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
    }
 
    if(!isError) {
-   document.getElementById("faultyItems").style.visibility = "visible";
+   list.style.visibility = "visible";
    } else {
-   document.getElementById("faultyItems").style.visibility = "hidden";
+   list.style.visibility = "hidden";
    }
 };
 
@@ -97,14 +97,13 @@ async function myFetch() {
 
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
         return response.json() });
+        
 
     return planetsReturned;
 }
 
 function pickPlanet(planets) {
     let index = Math.floor(Math.random() * (planets.length - 0) + 0);
-    console.log(planets);
-    console.log(index);
     return planets[index];
 }
 
