@@ -35,7 +35,7 @@ function changeLaunchStatus(document, ready) {
         launchStatus.innerText = "Shuttle is ready for launch";
         launchStatus.style.color = "green";
     } else {
-        launchStatus.innerText = "Shuttle Not Ready For Launch!";
+        launchStatus.innerText = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
     }
 };
@@ -49,7 +49,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     isError = true;
    } else {
     let pilotStatus = document.querySelector("li[id=pilotStatus]");
-    pilotStatus.innerText = `Pilot ${pilot} is ready for launch`;
+    pilotStatus.textContent = `Pilot ${pilot} is ready for launch`;
    }
 
    if(validateInput(copilot) != "Not a Number") {
@@ -63,7 +63,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
    if(validateInput(fuelLevel) != "Is a Number") {
     isError = true;
    } else if(fuelLevel < 10000) {
-    fuelStatus.innerText = "Fuel level is too low for launch";
+    fuelStatus.innerText = "Fuel level too low for launch";
     isLaunchReady = false;
    }
 
@@ -71,7 +71,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
    if(validateInput(cargoMass) != "Is a Number") {
     isError = true;
    } else if(cargoMass > 10000) {
-    cargoStatus.innerText = "Cargo mass too much for launch";
+    cargoStatus.innerText = "Cargo mass too heavy for launch";
     isLaunchReady = false;
    }
 
